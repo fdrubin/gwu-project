@@ -117,47 +117,46 @@ Yes/No
 
 
 # Elk Configuration
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible allows for a smooth and manuel-less automation. Not only can it be easily duplicated, but also expanded on. 
 
-TODO: What is the main advantage of automating configuration with Ansible?
+The https://github.com/fdrubin/gwu-project/blob/main/elk.yml_install playbook implements the following tasks:
 
-The playbook implements the following tasks:
+- Installs python3
+- Installs docker
+- Loades and launches docker
+- Expands capacity
 
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-...
-...
-
-The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
+The following screenshot displays the result of running https://github.com/fdrubin/gwu-project/blob/main/docker_install.yml after successfully configuring the ELK instance.
 
 ![Elk Configuration](https://user-images.githubusercontent.com/60769973/115309095-c7123880-a139-11eb-84be-80360f98a6ed.png)
 
+# Beats 
+Following beats were installed into the servers.
 
+- Metricbeat https://github.com/fdrubin/gwu-project/blob/main/metricbeat_install
+- Filebeat https://github.com/fdrubin/gwu-project/blob/main/filebeat_install.yml
 
-Target Machines & Beats
+# Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-
-TODO: List the IP addresses of the machines you are monitoring
+- 10.0.0.4
+- 10.0.0.5
+- 10.0.0.6
 
 We have installed the following Beats on these machines:
 
-TODO: Specify which Beats you successfully installed
-
 These Beats allow us to collect the following information from each machine:
 
-TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.
+- Metricbeat monitors and documents the machine's metrics like memory & cpu usages.
+- Filebeat records events inside of the terminsals, such as users' activity logs and any changes. 
 
+# Using the Ansible Build
 
-Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
+
 SSH into the control node and follow the steps below:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the "elk.yml_install" file to /etc/ansible
+Update the hosts file to include IP addresses of all VMs to run the playbook
+Run the playbook, and navigate to http://[your.Elk.VM.IP]:5601/app/kibana to check that the installation worked as expected.
 
-TODO: Answer the following questions to fill in the blanks:
-
-Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-_Which URL do you navigate to in order to check that the ELK server is running?# gwu-project
 
