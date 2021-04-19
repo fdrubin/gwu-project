@@ -4,68 +4,30 @@ Note: The following image link needs to be updated. Replace diagram_filename.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-TODO: Enter the playbook file.
-
 This document contains the following details:
+
+- Description of Topology
+- Azure diagram
+- Access policies
+- Elk Configuration
 
 Description of the Topologu
 Access Policies
 ELK Configuration
-
-Beats in Use
-Machines Being Monitored
-
-
-How to Use the Ansible Build
-
 
 # Description of the Topology
 
 ![Screen Shot 2021-04-18 at 9 06 39 PM](https://user-images.githubusercontent.com/60769973/115169385-d76bda00-a08b-11eb-8b81-fa9745c02212.png)
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access/control to the network.
 
-TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?
+Jumpbox: The jumpbox acts as a gateway router that is exposed to the public internet. It sits in front of all other machines that are not exposed to the internet. Directing all traffic through this one node drastically reduces the attack surface. We can implement strong access controls to this single machine, instead of on every VM.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-
-TODO: What does Filebeat watch for?
-TODO: What does Metricbeat record?
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system and system metrics.
 
 The configuration details of each machine may be found below.
 Note: Use the Markdown Table Generator to add/remove values from the table.
-
-
-
-Name
-Function
-IP Address
-Operating System
-
-
-
-
-Jump Box
-Gateway
-10.0.0.1
-Linux
-
-
-TODO
-
-
-
-
-
-TODO
-
-
-
-
-
-TODO
-
 
 
 
@@ -80,40 +42,20 @@ ELK-Server	Monitoring	10.1.0.4	Linux
 
 # Access Policies
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 52.249.188.220
+			
 
-TODO: Add whitelisted IP addresses
-
-Machines within the network can only be accessed by _____.
-
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+Machines within the network can only be accessed by eachother.
 
 A summary of the access policies in place can be found in the table below.
 
-
-
-Name
-Publicly Accessible
-Allowed IP Addresses
-
-
-
-
-Jump Box
-Yes/No
-10.0.0.1 10.0.0.2
-
-
-
-
-
-
-
-
-
-
-
-
+Name	    Publicly Accessible	Allowed IP Addresses	
+ChipotleAdmin Yes	            52.249.188.220	
+Web-1	        No	            10.0.0.1-254	
+Web-2	        No	            10.0.0.1-254	
+Web-3	        No	            10.0.0.1-254	
+ELK-Server    Yes	            91.39.72.23	
+			
 
 
 # Elk Configuration
