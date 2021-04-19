@@ -20,6 +20,9 @@ How to Use the Ansible Build
 
 
 # Description of the Topology
+
+![Screen Shot 2021-04-18 at 9 06 39 PM](https://user-images.githubusercontent.com/60769973/115169385-d76bda00-a08b-11eb-8b81-fa9745c02212.png)
+
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 
