@@ -73,9 +73,14 @@ TODO
 Name	Function	IP Address	Operating System
 Red-Team-JBP	Gateway	10.0.0.4	Linux
 Web-1	Web Server	10.0.0.5	Linux
-Web-2	Web Server	10.0.0.6	Linux
+Web-2	Web Server	10.0.0.6	Linux<img width="296" alt="Elk-VM" src="https://user-images.githubusercontent.com/60769973/115308646-08eeaf00-a139-11eb-9904-4739f293e781.png">
+
 Web-3	Web Server	10.0.0.7	Linux
 ELK-Server	Monitoring	10.1.0.4	Linux
+
+
+<img width="296" alt="Elk-VM" src="https://user-images.githubusercontent.com/60769973/115308688-1c9a1580-a139-11eb-94c7-f5b3b1a1377d.png">
+
 
 # Access Policies
 The machines on the internal network are not exposed to the public Internet.
